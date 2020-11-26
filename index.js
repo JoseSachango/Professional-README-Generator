@@ -100,7 +100,8 @@ inquirer.prompt([
 
     let renderMd = 
     ` # ${response.title}  
-         ${badge}
+${badge}
+
 ## Description
     ${response.description}
 
