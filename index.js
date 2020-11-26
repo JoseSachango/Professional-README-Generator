@@ -57,6 +57,18 @@ inquirer.prompt([
         type: "input"
     },
     {
+        name: "video",
+        message: `Provide a link to your screencastify videos.`,
+        type: "input"
+        
+    },
+    {
+        name: "coverImageLink",
+        message: `Provide a link to your video cover image.`,
+        type: "input"
+        
+    },
+    {
         name: "credits",
         message: "List your collaborators, if any, with links to their GitHub profiles. If you used any third-party assets that require attribution, list the creators with links to their primary web presence in this section. If you followed tutorials, include links to those here as well.",
         type: "input"
@@ -79,12 +91,7 @@ inquirer.prompt([
         type: "input"
         
     },
-    {
-        name: "video",
-        message: `Provide a link to your videos, images, or GIFs.`,
-        type: "input"
-        
-    },
+    
 
 
 
@@ -156,7 +163,7 @@ ${badge}
 ## Usage
     ${response.usage}
 
-[![Watch the video](https://ibb.co/Tk5g8kr)](${response.video})
+[![Watch the video](${response.coverImageLink})](${response.video})
 
 ## Credits
     ${response.credits}
