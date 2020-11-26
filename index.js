@@ -14,12 +14,37 @@ inquirer.prompt([
         type: "input"
 
     },
+    {
+        name: "fullName",
+        message: "What is your full name?",
+        type: "input"
+
+    },
+    {
+        name: "gitHubUserName",
+        message: "What is your GitHub user name?",
+        type: "input"
+
+    },
+    {
+        name: "email",
+        message: "What is your email?",
+        type: "email"
+
+    },
 
     {
         name: "description",
         message: `What was your motivation? Why did you build this project? What problem does it solve? What did you learn? What makes your project stand out? If your project has a lot of features, consider adding a heading called "Features" and listing them here`,
         type: "input"
         
+    },
+    {
+        name: "tableOfContents",
+        message: "Add a table of contents?",
+        type: "list",
+        choices: ["Yes","No"]
+
     },
     {
         name: "installation",
@@ -61,49 +86,59 @@ inquirer.prompt([
     console.log(response)
 
     //logic for license section
-    console.log("this is the license I chose")
-    console.log(response.license)
     let badge = ""
-
-    /*
-    switch(String(response.license)){
-
-        case "MIT": 
-            badge = "![APM](https://img.shields.io/apm/l/pack)";
-        case "APACHE 2.0":
-            badge = "sdfsd" ;
-        case "GPL 3.0":
-            badge = "sdfsdds";
-        case "BSD 3":
-            badge = "sdfsaa";
-        case "None":
-            badge = "salad";
-        
-    }
-    */
+    let license = ""
+    let contentsTable = ""
 
     if(response.license==="MIT"){
         badge = "![APM](https://img.shields.io/apm/l/pack)";
+        license = "The MIT license will let people do almost anything they want with your project, like making and distributing closed source versions."
     }
     else if(response.license==="APACHE 2.0"){
-        badge = "sdfsd" ;
+        badge = "![Hex.pm](https://img.shields.io/hexpm/l/apa)sdfsd" ;
+        license = "The APACHE 2.0 license main conditions require preservation of copyright and license notices. Contributors provide an express grant of patent rights. Licensed works, modifications, and larger works may be distributed under different terms and without source code."
     }
     else if(response.license==="GPL 3.0"){
-        badge = "asdfasdm";
+        badge = "![CRAN/METACRAN](https://img.shields.io/cran/l/gplm)";
+        license = "Permissions of the GPL 3.0 license are conditioned on making available complete source code of licensed works and modifications, which include larger works using a licensed work, under the same license. Copyright and license notices must be preserved. Contributors provide an express grant of patent rights."
     }
     else if(response.license==="BSD 3"){
-        badge = "mmmmm";
+        badge = "![PyPI - License](https://img.shields.io/pypi/l/bsdf)";
+        license = "The BSD 3-clause license allows you almost unlimited freedom with the software so long as you include the BSD copyright and license notice in it."
+
     }
     else if(response.license==="None"){
-        badge = "Not working";
+        badge = "No license";
     }
 
+    //logic for table of contents
+    if(response.tableOfContents==="Yes"){
+        contentsTable = 
+            `
+* [Installation](#installation)
+* [Usage](#usage)
+* [Credits](#credits)
+* [License](#license)
+* [Questions](#questions)
+* [Tests](#tests)
+* [Contributing](#contributing)
+* [Description](#description)
+
+            `
+    }
+
+
+
+    //variable that renders Md file
     let renderMd = 
     ` # ${response.title}  
 ${badge}
 
 ## Description
     ${response.description}
+
+## Table of Contents
+    ${contentsTable}
 
 ## Installation
     ${response.installation}
@@ -122,6 +157,11 @@ ${badge}
 
 ## Tests
     ${response.test}
+## Questions
+    Questions? Contact ${response.fullName} using the following:
+GitHub ~ ${response.gitHubUserName} @ https://github.com/JoseSachango       
+Email ~ ${response.email}
+
     `
     
     
