@@ -18,10 +18,10 @@
             
 
 ## Installation
-    After downloading the files, open a GitBash terminal and run the command:node index.js. Answer all the questions to generate a comprehensive README document. 
+    After downloading the files, open a GitBash
 
 ## Usage
-    See the video below for instructions and examples of how to use this generator.
+     See the video below for instructions and examples of how to use this generator.
 
 ## Credits
     N/A

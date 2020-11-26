@@ -79,6 +79,13 @@ inquirer.prompt([
         type: "input"
         
     },
+    {
+        name: "video",
+        message: `Provide a link to your videos, images, or GIFs.`,
+        type: "input"
+        
+    },
+
 
 
 ]).then((response)=>{
@@ -126,6 +133,9 @@ inquirer.prompt([
 
             `
     }
+    else{
+        contentsTable = `N/A`
+    }
 
 
 
@@ -145,6 +155,8 @@ ${badge}
 
 ## Usage
     ${response.usage}
+
+[![Watch the video](https://ibb.co/Tk5g8kr)](${response.video})
 
 ## Credits
     ${response.credits}
