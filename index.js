@@ -39,7 +39,8 @@ inquirer.prompt([
     {
         name: "license",
         message: "lets other developers know what they can and cannot do with your project. If you need help choosing a license, use [https://choosealicense.com/](https://choosealicense.com/)",
-        type: "input"
+        type: 'list',
+        choices: ["MIT", "APACHE 2.0", "GPL 3.0", "BSD 3", "None"],
     },
     {
         name: "contributing",
@@ -59,9 +60,47 @@ inquirer.prompt([
 
     console.log(response)
 
+    //logic for license section
+    console.log("this is the license I chose")
+    console.log(response.license)
+    let badge = ""
+
+    /*
+    switch(String(response.license)){
+
+        case "MIT": 
+            badge = "![APM](https://img.shields.io/apm/l/pack)";
+        case "APACHE 2.0":
+            badge = "sdfsd" ;
+        case "GPL 3.0":
+            badge = "sdfsdds";
+        case "BSD 3":
+            badge = "sdfsaa";
+        case "None":
+            badge = "salad";
+        
+    }
+    */
+
+    if(response.license==="MIT"){
+        badge = "![APM](https://img.shields.io/apm/l/pack)";
+    }
+    else if(response.license==="APACHE 2.0"){
+        badge = "sdfsd" ;
+    }
+    else if(response.license==="GPL 3.0"){
+        badge = "asdfasdm";
+    }
+    else if(response.license==="BSD 3"){
+        badge = "mmmmm";
+    }
+    else if(response.license==="None"){
+        badge = "Not working";
+    }
+
     let renderMd = 
     ` # ${response.title}  
-         
+         ${badge}
 ## Description
     ${response.description}
 
