@@ -1,4 +1,4 @@
- # Professional README Generator  
+ #  Professional README Generator  
 ![APM](https://img.shields.io/apm/l/pack)
 
 ## Description
@@ -21,7 +21,9 @@
     After downloading the files, open a GitBash
 
 ## Usage
-     See the video below for instructions and examples of how to use this generator.
+    See the video below for instructions and examples of how to use this generator.
+
+[![Watch the video](https://ibb.co/Tk5g8kr)](https://youtu.be/hNv5kD6nDXo)
 
 ## Credits
     N/A
