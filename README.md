@@ -23,7 +23,7 @@
 ## Usage
     See the video below for instructions and examples of how to use this generator.
 
-[![Watch the video](https://ibb.co/Tk5g8kr)](https://youtu.be/hNv5kD6nDXo)
+[![Watch the video](https://i.imgur.com/BJ4I5HB.png)](https://youtu.be/hNv5kD6nDXo)
 
 ## Credits
     N/A
